@@ -1,9 +1,7 @@
 // 将JSON格式的积木块转换为JavaScript代码
 function convertBlocksToCode(blockJson) {
-  // 如果输入为空，返回空字符串
   if (!blockJson) return '';
 
-  // 根据块类型处理
   switch (blockJson.type) {
     case '当开始运行':
       return `当开始运行(() => {\n${convertBlocksToCode(blockJson.next)}\n});`;
